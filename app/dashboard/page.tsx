@@ -2,15 +2,15 @@
 
 import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
-import { 
-  Sparkles, 
-  BookOpen, 
-  History, 
-  Heart, 
-  PlusCircle, 
-  FileText, 
-  Copy, 
-  Trash2, 
+import {
+  Sparkles,
+  BookOpen,
+  History,
+  Heart,
+  PlusCircle,
+  FileText,
+  Copy,
+  Trash2,
   Star,
   ExternalLink,
   ChevronRight,
@@ -21,12 +21,12 @@ import {
   Edit,
   ArrowRight
 } from 'lucide-react';
-import { 
-  getDashboardStats, 
-  getGenerations, 
-  getPrompts, 
-  toggleFavoriteGeneration, 
-  deleteGeneration 
+import {
+  getDashboardStats,
+  getGenerations,
+  getPrompts,
+  toggleFavoriteGeneration,
+  deleteGeneration
 } from '@/lib/storage';
 import { DashboardStats, Generation, Prompt } from '@/types';
 import { cn, formatDate, formatNumber } from '@/lib/utils';
@@ -117,7 +117,7 @@ export default function Dashboard() {
       return (
         <div className="flex flex-col items-center justify-center h-48 text-slate-400 text-xs text-center border border-dashed border-slate-800 rounded-xl">
           <TrendingUp size={24} className="mb-2 text-slate-700" />
-          <span>No analytics data yet.<br/>Generate content to populate this chart.</span>
+          <span>No analytics data yet.<br />Generate content to populate this chart.</span>
         </div>
       );
     }
@@ -194,7 +194,7 @@ export default function Dashboard() {
 
   return (
     <div className="space-y-8">
-      
+
       {/* Welcome Banner */}
       <div className="rounded-2xl p-6 md:p-8 bg-gradient-to-r from-violet-600/15 via-purple-600/5 to-cyan-500/10 border border-violet-500/15 flex flex-col md:flex-row justify-between items-start md:items-center gap-6">
         <div>
@@ -203,8 +203,8 @@ export default function Dashboard() {
             Build and optimize custom text generations, edit workflows, or manage pre-seeded templates from your Prompt Library.
           </p>
         </div>
-        <Link 
-          href="/create" 
+        <Link
+          href="/create"
           className="px-5 py-3 rounded-xl font-bold text-sm bg-gradient-to-r from-violet-600 to-indigo-600 hover:from-violet-500 hover:to-indigo-500 text-white shadow-md neon-glow-primary hover:-translate-y-0.5 transition-all flex items-center gap-2 flex-shrink-0"
         >
           <PlusCircle size={16} />
@@ -237,7 +237,7 @@ export default function Dashboard() {
 
       {/* Main Split Grid */}
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 md:gap-8">
-        
+
         {/* Left Columns - Recent Generations */}
         <div className="lg:col-span-2 space-y-4">
           <div className="flex items-center justify-between">
@@ -262,8 +262,8 @@ export default function Dashboard() {
                 const Icon = getIcon(gen.contentType);
                 const colClass = getCol(gen.contentType);
                 return (
-                  <Link 
-                    key={gen.id} 
+                  <Link
+                    key={gen.id}
                     href={`/create?id=${gen.id}`}
                     className="glass p-5 rounded-2xl block hover:bg-slate-900/30 transition-all border border-slate-800/30 hover:border-violet-500/20 group relative overflow-hidden"
                   >
@@ -284,8 +284,8 @@ export default function Dashboard() {
                           onClick={(e) => handleFavoriteToggle(gen.id, e)}
                           className={cn(
                             "p-2 rounded-lg border hover:bg-slate-800 transition-colors",
-                            gen.isFavorite 
-                              ? "text-pink-500 border-pink-500/25 bg-pink-500/5" 
+                            gen.isFavorite
+                              ? "text-pink-500 border-pink-500/25 bg-pink-500/5"
                               : "text-slate-400 border-slate-800"
                           )}
                           title={gen.isFavorite ? "Remove from Favorites" : "Add to Favorites"}
@@ -317,7 +317,7 @@ export default function Dashboard() {
 
         {/* Right Columns - Analytics Chart & Quick Presets */}
         <div className="space-y-6">
-          
+
           {/* SVG bar chart */}
           <div className="glass p-5 rounded-2xl space-y-4">
             <h3 className="text-sm font-bold text-white uppercase tracking-wider">Workspace Analytics</h3>
