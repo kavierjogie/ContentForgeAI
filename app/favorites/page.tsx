@@ -185,8 +185,6 @@ export default function FavoritesPage() {
                     <div className="flex flex-wrap items-center gap-3 pt-1 text-[10px] text-slate-400 dark:text-slate-500 font-mono">
                       <span>Tone: <strong>{item.tone}</strong></span>
                       <span>&bull;</span>
-                      <span>Lang: <strong>{item.language}</strong></span>
-                      <span>&bull;</span>
                       <span>Words: <strong>{item.wordCount}</strong></span>
                     </div>
                   </div>

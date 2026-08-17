@@ -99,7 +99,6 @@ export default function SettingsPage() {
 
   const tones = ['Professional', 'Friendly', 'Casual', 'Persuasive', 'Educational', 'Creative', 'Technical'];
   const lengths = ['Short', 'Medium', 'Long'];
-  const languages = ['English', 'Afrikaans', 'isiXhosa', 'isiZulu', 'French', 'Spanish', 'Portuguese'];
 
   return (
     <div className="max-w-3xl space-y-8">
@@ -146,18 +145,7 @@ export default function SettingsPage() {
           <p className="text-slate-500 text-xs mt-0.5">Define default properties loaded when opening new content drafts.</p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-          {/* Lang */}
-          <div className="space-y-1">
-            <label className="text-[10px] font-bold uppercase tracking-wider text-slate-400">Language</label>
-            <select
-              value={settings.defaultLanguage}
-              onChange={(e) => updateSetting('defaultLanguage', e.target.value)}
-              className="w-full px-4 py-2.5 rounded-xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 text-xs"
-            >
-              {languages.map(l => <option key={l} value={l}>{l}</option>)}
-            </select>
-          </div>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
 
           {/* Tone */}
           <div className="space-y-1">

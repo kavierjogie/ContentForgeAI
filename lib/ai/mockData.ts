@@ -4,65 +4,23 @@ export interface MockOptions {
   audience: string;
   tone: string;
   length: string;
-  language: string;
   instructions?: string;
 }
 
 export const getMockGeneratedContent = (options: MockOptions): string => {
-  const { contentType, topic, audience, tone, length, language, instructions } = options;
+  const { contentType, topic, audience, tone, length, instructions } = options;
   
   // Clean values
   const t = topic || 'Artificial Intelligence in Modern Workspaces';
   const aud = audience || 'General Professionals';
   const customIns = instructions ? `\n\n*Note: Incorporating special request: "${instructions}"*` : '';
 
-  // Language translations for headings and intro phrases
-  const languageHeaders: Record<string, { intro: string; keyPoints: string; conclusion: string; sampleCode: string }> = {
-    English: {
-      intro: 'Introduction',
-      keyPoints: 'Key Takeaways & Details',
-      conclusion: 'Conclusion & Action Steps',
-      sampleCode: 'Implementation Code'
-    },
-    Spanish: {
-      intro: 'Introducción',
-      keyPoints: 'Puntos Clave y Detalles',
-      conclusion: 'Conclusión y Próximos Pasos',
-      sampleCode: 'Código de Implementación'
-    },
-    French: {
-      intro: 'Introduction',
-      keyPoints: 'Points Clés & Détails',
-      conclusion: 'Conclusion et Prochaines Étapes',
-      sampleCode: 'Code d\'Implémentation'
-    },
-    Portuguese: {
-      intro: 'Introdução',
-      keyPoints: 'Pontos Chave e Detalhes',
-      conclusion: 'Conclusão e Próximos Passos',
-      sampleCode: 'Código de Implementação'
-    },
-    Afrikaans: {
-      intro: 'Inleiding',
-      keyPoints: 'Belangrikste Knoopunte',
-      conclusion: 'Gevolgtrekking & Aksiestappe',
-      sampleCode: 'Implementeringskode'
-    },
-    isiZulu: {
-      intro: 'Isingeniso',
-      keyPoints: 'Amaphuzu Abalulekile',
-      conclusion: 'Isiphetho nezinyathelo ezilandelayo',
-      sampleCode: 'Ikhodi Yokusebenza'
-    },
-    isiXhosa: {
-      intro: 'Intshayelelo',
-      keyPoints: 'Amanqaku Ayintloko',
-      conclusion: 'Ukuqukumbela kunye namanyathelo alandelayo',
-      sampleCode: 'Ikhodi yokuSebenza'
-    }
+  const h = {
+    intro: 'Introduction',
+    keyPoints: 'Key Takeaways & Details',
+    conclusion: 'Conclusion & Action Steps',
+    sampleCode: 'Implementation Code'
   };
-
-  const h = languageHeaders[language] || languageHeaders.English;
 
   // Let's generate content based on content type
   if (contentType === 'code') {
@@ -182,7 +140,7 @@ Whether you're looking to create engaging copy, clean technical guides, or high-
 ### Why Choose Us?
 *   **Custom Tailored:** Adjusts parameters to fit **${aud}** requirements.
 *   **Highly Performant:** Instant output saves up to 80% of manual editing time.
-*   **Flexible Framework:** Works across multiple languages (including ${language}) and tones.
+*   **Flexible Framework:** Works across multiple formats and tones.
 
 Get started today and experience the difference yourself!
 ${customIns}`;

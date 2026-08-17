@@ -11,7 +11,6 @@ export async function POST(req: NextRequest) {
       audience, 
       tone, 
       length, 
-      language, 
       instructions, 
       prompt,
       forceDemo 
@@ -37,7 +36,6 @@ export async function POST(req: NextRequest) {
         audience,
         tone,
         length,
-        language,
         instructions
       });
       return NextResponse.json({ content: mockText, demoMode: true });
@@ -45,8 +43,7 @@ export async function POST(req: NextRequest) {
 
     // Compile system prompt
     const systemPrompt = `You are an expert content creation assistant. Generate clear, useful, accurate, and professional content based on the user's requirements.
-Follow the requested tone, audience, language, and format constraints.
-Write the output directly in the requested language (${language}).
+Follow the requested tone, audience, and format constraints.
 Do not add meta-commentary, introduction intros (like "Sure, here is your content"), or unnecessary conversational fluff unless requested.
 Format the output with clean markdown headings and structural grids where appropriate.`;
 

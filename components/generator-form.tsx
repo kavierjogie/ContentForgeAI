@@ -24,8 +24,6 @@ interface GeneratorFormProps {
   setTone: (val: string) => void;
   length: string;
   setLength: (val: string) => void;
-  language: string;
-  setLanguage: (val: string) => void;
   instructions: string;
   setInstructions: (val: string) => void;
   prompt: string;
@@ -45,8 +43,6 @@ export default function GeneratorForm({
   setTone,
   length,
   setLength,
-  language,
-  setLanguage,
   instructions,
   setInstructions,
   prompt,
@@ -69,11 +65,10 @@ export default function GeneratorForm({
 
   const tones = ['Professional', 'Friendly', 'Casual', 'Persuasive', 'Educational', 'Creative', 'Technical'];
   const lengths = ['Short', 'Medium', 'Long'];
-  const languages = ['English', 'Afrikaans', 'isiXhosa', 'isiZulu', 'French', 'Spanish', 'Portuguese'];
 
   // Compile final prompt automatically based on options (unless manually modified)
   useEffect(() => {
-    const rawCompiled = `Generate a ${length.toLowerCase()} ${contentType} written in ${language}.
+    const rawCompiled = `Generate a ${length.toLowerCase()} ${contentType}.
 Topic: ${topic || '(Not Specified)'}
 Target Audience: ${audience || '(General)'}
 Tone: ${tone}
@@ -81,7 +76,7 @@ ${instructions ? `Additional Directions: ${instructions}` : ''}
 Ensure the result has clear, semantic structure.`;
     
     setPrompt(rawCompiled);
-  }, [contentType, topic, audience, tone, length, language, instructions, setPrompt]);
+  }, [contentType, topic, audience, tone, length, instructions, setPrompt]);
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
@@ -188,19 +183,7 @@ Ensure the result has clear, semantic structure.`;
 
       </div>
 
-      {/* Language */}
-      <div className="space-y-2">
-        <label htmlFor="lang-select" className="text-xs font-bold uppercase tracking-wider text-slate-500 dark:text-slate-400">Language</label>
-        <select
-          id="lang-select"
-          value={language}
-          onChange={(e) => setLanguage(e.target.value)}
-          disabled={isLoading}
-          className="w-full px-4 py-3 rounded-xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 focus:outline-none focus:ring-2 focus:ring-violet-500 text-sm transition-shadow disabled:opacity-50"
-        >
-          {languages.map((l) => <option key={l} value={l}>{l}</option>)}
-        </select>
-      </div>
+
 
       {/* Additional Instructions */}
       <div className="space-y-2">

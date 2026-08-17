@@ -5,7 +5,6 @@ export interface Generation {
   prompt: string;
   generatedContent: string;
   tone: string;
-  language: string;
   wordCount: number;
   charCount: number;
   createdAt: string;
@@ -28,7 +27,6 @@ export interface Prompt {
 
 export interface AppSettings {
   theme: 'light' | 'dark' | 'system';
-  defaultLanguage: string;
   defaultTone: string;
   defaultLength: 'Short' | 'Medium' | 'Long';
   apiProvider: 'gemini' | 'demo';

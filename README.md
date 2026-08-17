@@ -4,7 +4,7 @@ ContentForge AI is a premium, portfolio-grade content creation workspace built u
 
 ## Features
 
-1.  **Dual-Panel AI Content Generator:** Customize target content type, topic, audience, tone, length, and language, and inspect or edit the compiled prompt in real-time.
+1.  **Dual-Panel AI Content Generator:** Customize target content type, topic, audience, tone, and length, and inspect or edit the compiled prompt in real-time.
 2.  **Rich Text Refactoring:** Modify output drafts in-place with dedicated secondary AI actions (Improve grammar, Shorten, Expand, or Change Tone).
 3.  **Variable-Injected Prompt Library:** Store starter templates and custom prompts. Templates with bracketed variables like `[RECIPIENT_NAME]` automatically generate input forms in a modal before redirecting to the workspace.
 4.  **Generation History:** Retrieve, copy, edit, or delete past content generations stored inside local workspace caches.

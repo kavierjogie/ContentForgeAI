@@ -29,7 +29,6 @@ function CreateContentInner() {
   const [audience, setAudience] = useState('');
   const [tone, setTone] = useState('Professional');
   const [length, setLength] = useState('Medium');
-  const [language, setLanguage] = useState('English');
   const [instructions, setInstructions] = useState('');
   const [prompt, setPrompt] = useState('');
 
@@ -49,10 +48,9 @@ function CreateContentInner() {
   // Load from search parameters or default settings on mount
   useEffect(() => {
     const settings = getSettings();
-    setContentType(settings.defaultLanguage ? 'blog' : 'blog'); // default type
+    setContentType('blog'); // default type
     setTone(settings.defaultTone || 'Professional');
     setLength(settings.defaultLength || 'Medium');
-    setLanguage(settings.defaultLanguage || 'English');
 
     // Case 1: Pre-fill content type from landing page grid
     if (typeParam) {
@@ -68,7 +66,6 @@ function CreateContentInner() {
         setTopic(existing.title);
         setGeneratedContent(existing.generatedContent);
         setTone(existing.tone);
-        setLanguage(existing.language);
         setCurrentGenerationId(existing.id);
         setCurrentTitle(existing.title);
         setIsSaved(true);
@@ -125,7 +122,6 @@ function CreateContentInner() {
       audience,
       tone,
       length,
-      language,
       instructions,
       prompt
     };
@@ -155,7 +151,6 @@ function CreateContentInner() {
               prompt,
               generatedContent: resJson.content,
               tone,
-              language,
               wordCount: words,
               charCount: resJson.content.length,
               createdAt: new Date().toISOString()
@@ -190,7 +185,6 @@ function CreateContentInner() {
               prompt,
               generatedContent: resJson.content,
               tone,
-              language,
               wordCount: words,
               charCount: resJson.content.length,
               createdAt: new Date().toISOString()
@@ -254,7 +248,6 @@ function CreateContentInner() {
       prompt,
       generatedContent,
       tone,
-      language,
       wordCount: words,
       charCount: generatedContent.length,
       createdAt: new Date().toISOString()
@@ -304,8 +297,6 @@ function CreateContentInner() {
             setTone={setTone}
             length={length}
             setLength={setLength}
-            language={language}
-            setLanguage={setLanguage}
             instructions={instructions}
             setInstructions={setInstructions}
             prompt={prompt}

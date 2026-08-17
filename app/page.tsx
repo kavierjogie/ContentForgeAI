@@ -35,8 +35,7 @@ export default function LandingPage() {
     { title: 'Dynamic Prompt Library', desc: 'Save and run templates with custom inputs dynamically resolved.', icon: BookOpen },
     { title: 'Refined Secondary Action Editors', desc: 'Instantly improve, shorten, expand or re-tone drafts in place.', icon: Edit3 },
     { title: 'Full Generation History Log', desc: 'Never lose a draft. Easily revisit previous configurations and outputs.', icon: History },
-    { title: 'One-Click Copy & Download', desc: 'Export copy to clipboard or download text files in one click.', icon: Copy },
-    { title: 'Global Translations', desc: 'Output responses in international languages such as Afrikaans, Zulu and Xhosa.', icon: Globe }
+    { title: 'One-Click Copy & Download', desc: 'Export copy to clipboard or download text files in one click.', icon: Copy }
   ];
 
   const samplePrompts = [
@@ -199,7 +198,7 @@ export default function LandingPage() {
           <div className="bg-slate-950 p-6 rounded-2xl border border-white/5 flex flex-col justify-between items-center text-center relative z-10">
             <div className="w-12 h-12 rounded-full bg-cyan-500/10 border border-cyan-500/30 text-cyan-400 flex items-center justify-center font-bold text-lg mb-4">2</div>
             <h3 className="font-bold text-lg">Define Parameters</h3>
-            <p className="text-slate-400 text-sm mt-2">Specify your target topic, audience, length, tone and language settings or write custom instructions.</p>
+            <p className="text-slate-400 text-sm mt-2">Specify your target topic, audience, length, and tone settings or write custom instructions.</p>
           </div>
 
           <div className="bg-slate-950 p-6 rounded-2xl border border-white/5 flex flex-col justify-between items-center text-center relative z-10">

@@ -275,7 +275,7 @@ export default function Dashboard() {
                         <div>
                           <h4 className="font-bold text-slate-900 dark:text-white group-hover:text-violet-500 dark:group-hover:text-violet-400 transition-colors line-clamp-1">{gen.title}</h4>
                           <span className="text-[10px] text-slate-400 dark:text-slate-500 mt-1 block">
-                            {formatDate(gen.createdAt)} &bull; {gen.wordCount} words &bull; {gen.tone} ({gen.language})
+                            {formatDate(gen.createdAt)} &bull; {gen.wordCount} words &bull; {gen.tone}
                           </span>
                         </div>
                       </div>
