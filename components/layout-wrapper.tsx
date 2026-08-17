@@ -10,7 +10,7 @@ export default function LayoutWrapper({ children }: { children: React.ReactNode 
   const isLandingPage = pathname === '/';
 
   if (isLandingPage) {
-    return <div className="min-h-screen bg-slate-950 text-slate-100 selection:bg-violet-500/30 selection:text-violet-200">{children}</div>;
+    return <div className="dark min-h-screen bg-slate-950 text-slate-100 selection:bg-violet-500/30 selection:text-violet-200">{children}</div>;
   }
 
   return (
