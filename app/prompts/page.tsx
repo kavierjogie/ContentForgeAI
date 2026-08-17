@@ -220,7 +220,7 @@ function PromptLibraryInner() {
             value={search}
             onChange={(e) => setSearch(e.target.value)}
             placeholder="Search prompts or tags..."
-            className="w-full pl-10 pr-4 py-3 text-sm rounded-xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 focus:outline-none focus:ring-2 focus:ring-violet-500"
+            className="w-full pl-10 pr-4 py-3 text-sm rounded-xl border border-slate-800 bg-slate-900 focus:outline-none focus:ring-2 focus:ring-violet-500 text-slate-100"
           />
         </div>
 
@@ -246,8 +246,8 @@ function PromptLibraryInner() {
             className={cn(
               "px-4 py-2 rounded-xl text-xs font-semibold whitespace-nowrap transition-all border",
               activeCategory === cat
-                ? "bg-slate-900 border-slate-900 text-white dark:bg-white dark:border-white dark:text-slate-950 font-bold"
-                : "bg-white dark:bg-slate-900 border-slate-200 dark:border-slate-800 text-slate-600 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-800"
+                ? "bg-white border-white text-slate-950 font-bold"
+                : "bg-slate-900 border-slate-800 text-slate-400 hover:bg-slate-800"
             )}
           >
             {cat}
@@ -258,18 +258,18 @@ function PromptLibraryInner() {
       {/* Grid List */}
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
         {filteredPrompts.length === 0 ? (
-          <div className="col-span-full glass p-12 rounded-2xl text-center space-y-4 border border-dashed border-slate-200 dark:border-slate-800">
-            <div className="w-12 h-12 rounded-full bg-slate-100 dark:bg-slate-900 flex items-center justify-center mx-auto text-slate-400">
+          <div className="col-span-full glass p-12 rounded-2xl text-center space-y-4 border border-dashed border-slate-800">
+            <div className="w-12 h-12 rounded-full bg-slate-900 flex items-center justify-center mx-auto text-slate-400">
               <FolderOpen size={20} />
             </div>
             <div>
-              <p className="text-sm font-bold text-slate-800 dark:text-slate-200">No prompts found</p>
+              <p className="text-sm font-bold text-slate-200">No prompts found</p>
               <p className="text-slate-400 text-xs mt-1">Try refining your search filter or create a new custom prompt.</p>
             </div>
             {activeCategory === 'Favorites' && (
               <button
                 onClick={() => setActiveCategory('All')}
-                className="px-4 py-2 rounded-lg text-xs font-bold bg-slate-200 dark:bg-slate-800 text-slate-700 dark:text-slate-300 hover:bg-slate-300 transition-colors"
+                className="px-4 py-2 rounded-lg text-xs font-bold bg-slate-800 text-slate-300 hover:bg-slate-700 transition-colors"
               >
                 Clear Filters
               </button>
@@ -293,19 +293,19 @@ function PromptLibraryInner() {
       {/* Builder Modal (Create/Edit prompt) */}
       {showBuilder && (
         <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/60 backdrop-blur-sm p-4">
-          <div className="glass-panel w-full max-w-xl rounded-2xl border border-slate-200/50 dark:border-slate-800/50 shadow-2xl p-6 md:p-8 space-y-6 relative max-h-[90vh] overflow-y-auto">
+          <div className="glass-panel w-full max-w-xl rounded-2xl border border-slate-800/50 shadow-2xl p-6 md:p-8 space-y-6 relative max-h-[90vh] overflow-y-auto">
             <button
               onClick={() => {
                 setShowBuilder(false);
                 setBuilderEditingId(null);
               }}
-              className="absolute top-4 right-4 p-1.5 rounded-lg border border-slate-200 dark:border-slate-800 text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-800 hover:text-slate-650"
+              className="absolute top-4 right-4 p-1.5 rounded-lg border border-slate-800 text-slate-400 hover:bg-slate-800 hover:text-white"
             >
               <X size={16} />
             </button>
 
             <div>
-              <h3 className="text-lg font-bold text-slate-900 dark:text-white">
+              <h3 className="text-lg font-bold text-white">
                 {builderEditingId ? 'Edit Custom Prompt' : 'Create Custom Prompt'}
               </h3>
               <p className="text-xs text-slate-500 mt-1">
@@ -322,7 +322,7 @@ function PromptLibraryInner() {
                   value={name}
                   onChange={(e) => setName(e.target.value)}
                   placeholder="e.g. Cold Outreach Generator"
-                  className="w-full px-4 py-2.5 rounded-xl border border-slate-250 dark:border-slate-800 bg-white dark:bg-slate-900 text-sm focus:outline-none focus:ring-2 focus:ring-violet-500"
+                  className="w-full px-4 py-2.5 rounded-xl border border-slate-800 bg-slate-900 text-sm focus:outline-none focus:ring-2 focus:ring-violet-500 text-slate-100"
                 />
               </div>
 
@@ -333,7 +333,7 @@ function PromptLibraryInner() {
                   value={description}
                   onChange={(e) => setDescription(e.target.value)}
                   placeholder="e.g. Generate high-converting sales outreach letters."
-                  className="w-full px-4 py-2.5 rounded-xl border border-slate-250 dark:border-slate-800 bg-white dark:bg-slate-900 text-sm focus:outline-none focus:ring-2 focus:ring-violet-500"
+                  className="w-full px-4 py-2.5 rounded-xl border border-slate-800 bg-slate-900 text-sm focus:outline-none focus:ring-2 focus:ring-violet-500 text-slate-100"
                 />
               </div>
 
@@ -343,7 +343,7 @@ function PromptLibraryInner() {
                   <select
                     value={category}
                     onChange={(e) => setCategory(e.target.value)}
-                    className="w-full px-4 py-2.5 rounded-xl border border-slate-250 dark:border-slate-800 bg-white dark:bg-slate-900 text-sm focus:outline-none focus:ring-2 focus:ring-violet-500"
+                    className="w-full px-4 py-2.5 rounded-xl border border-slate-800 bg-slate-900 text-sm focus:outline-none focus:ring-2 focus:ring-violet-500 text-slate-100"
                   >
                     {categories.filter(c => c !== 'All' && c !== 'Favorites').map(c => (
                       <option key={c} value={c}>{c}</option>
@@ -358,7 +358,7 @@ function PromptLibraryInner() {
                     value={tags}
                     onChange={(e) => setTags(e.target.value)}
                     placeholder="e.g. Sales, Cold, B2B"
-                    className="w-full px-4 py-2.5 rounded-xl border border-slate-250 dark:border-slate-800 bg-white dark:bg-slate-900 text-sm focus:outline-none focus:ring-2 focus:ring-violet-500"
+                    className="w-full px-4 py-2.5 rounded-xl border border-slate-800 bg-slate-900 text-sm focus:outline-none focus:ring-2 focus:ring-violet-500 text-slate-100"
                   />
                 </div>
               </div>
@@ -371,18 +371,18 @@ function PromptLibraryInner() {
                   onChange={(e) => setTemplate(e.target.value)}
                   placeholder="e.g. Write a cover letter for a [JOB_TITLE] position at [COMPANY] highlighting my experience in [SKILLS]."
                   rows={4}
-                  className="w-full px-4 py-3 rounded-xl border border-slate-250 dark:border-slate-800 bg-white dark:bg-slate-900 text-sm focus:outline-none focus:ring-2 focus:ring-violet-500"
+                  className="w-full px-4 py-3 rounded-xl border border-slate-800 bg-slate-900 text-sm focus:outline-none focus:ring-2 focus:ring-violet-500 text-slate-100"
                 />
               </div>
 
-              <div className="pt-4 flex justify-end gap-3 border-t border-slate-200/50 dark:border-slate-800/50">
+              <div className="pt-4 flex justify-end gap-3 border-t border-slate-800/50">
                 <button
                   type="button"
                   onClick={() => {
                     setShowBuilder(false);
                     setBuilderEditingId(null);
                   }}
-                  className="px-4 py-2 rounded-xl text-xs font-bold border border-slate-200 dark:border-slate-800 text-slate-600 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors"
+                  className="px-4 py-2 rounded-xl text-xs font-bold border border-slate-800 text-slate-400 hover:bg-slate-800 transition-colors"
                 >
                   Cancel
                 </button>
@@ -401,17 +401,17 @@ function PromptLibraryInner() {
       {/* Variables Input Modal (Fills variables when utilizing prompts) */}
       {activePromptForVars && (
         <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/60 backdrop-blur-sm p-4">
-          <div className="glass-panel w-full max-w-md rounded-2xl border border-slate-200/50 dark:border-slate-800/50 shadow-2xl p-6 relative max-h-[95vh] overflow-y-auto space-y-5">
+          <div className="glass-panel w-full max-w-md rounded-2xl border border-slate-800/50 shadow-2xl p-6 relative max-h-[95vh] overflow-y-auto space-y-5">
             
             <button
               onClick={() => setActivePromptForVars(null)}
-              className="absolute top-4 right-4 p-1.5 rounded-lg border border-slate-200 dark:border-slate-800 text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-800"
+              className="absolute top-4 right-4 p-1.5 rounded-lg border border-slate-800 text-slate-400 hover:bg-slate-800"
             >
               <X size={16} />
             </button>
 
             <div>
-              <h3 className="font-bold text-slate-900 dark:text-white flex items-center gap-1.5">
+              <h3 className="font-bold text-white flex items-center gap-1.5">
                 <Sliders size={18} className="text-violet-500" />
                 <span>Resolve Prompt Variables</span>
               </h3>
@@ -431,16 +431,16 @@ function PromptLibraryInner() {
                       [variable]: e.target.value
                     })}
                     placeholder={`Enter value for [${variable}]`}
-                    className="w-full px-4 py-2.5 rounded-xl border border-slate-250 dark:border-slate-800 bg-white dark:bg-slate-900 text-xs focus:outline-none focus:ring-2 focus:ring-violet-500"
+                    className="w-full px-4 py-2.5 rounded-xl border border-slate-800 bg-slate-900 text-xs focus:outline-none focus:ring-2 focus:ring-violet-500 text-slate-100"
                   />
                 </div>
               ))}
 
-              <div className="pt-4 flex justify-end gap-3 border-t border-slate-200/50 dark:border-slate-800/50">
+              <div className="pt-4 flex justify-end gap-3 border-t border-slate-800/50">
                 <button
                   type="button"
                   onClick={() => setActivePromptForVars(null)}
-                  className="px-4 py-2 rounded-xl text-xs font-bold border border-slate-200 dark:border-slate-800 text-slate-600 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors"
+                  className="px-4 py-2 rounded-xl text-xs font-bold border border-slate-800 text-slate-400 hover:bg-slate-800 transition-colors"
                 >
                   Cancel
                 </button>

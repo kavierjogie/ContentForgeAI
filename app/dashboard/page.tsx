@@ -115,8 +115,8 @@ export default function Dashboard() {
   const renderTypeChart = () => {
     if (!stats || Object.keys(stats.typeDistribution).length === 0) {
       return (
-        <div className="flex flex-col items-center justify-center h-48 text-slate-400 text-xs text-center border border-dashed border-slate-200 dark:border-slate-800 rounded-xl">
-          <TrendingUp size={24} className="mb-2 text-slate-300 dark:text-slate-700" />
+        <div className="flex flex-col items-center justify-center h-48 text-slate-400 text-xs text-center border border-dashed border-slate-800 rounded-xl">
+          <TrendingUp size={24} className="mb-2 text-slate-700" />
           <span>No analytics data yet.<br/>Generate content to populate this chart.</span>
         </div>
       );
@@ -148,7 +148,7 @@ export default function Dashboard() {
                 width={barWidth + 8}
                 height={height - padding * 2 + 15}
                 fill="currentColor"
-                className="text-slate-100/50 dark:text-slate-800/10 opacity-0 group-hover:opacity-100 transition-opacity"
+                className="text-slate-800/10 opacity-0 group-hover:opacity-100 transition-opacity"
                 rx={4}
               />
               {/* Bar gradient color */}
@@ -165,7 +165,7 @@ export default function Dashboard() {
                 x={x + barWidth / 2}
                 y={y - 6}
                 textAnchor="middle"
-                className="text-[10px] font-bold fill-slate-700 dark:fill-slate-300 opacity-0 group-hover:opacity-100 transition-opacity"
+                className="text-[10px] font-bold fill-slate-300 opacity-0 group-hover:opacity-100 transition-opacity"
               >
                 {count}
               </text>
@@ -174,7 +174,7 @@ export default function Dashboard() {
                 x={x + barWidth / 2}
                 y={height - 10}
                 textAnchor="middle"
-                className="text-[9px] font-semibold uppercase tracking-wider fill-slate-400 dark:fill-slate-500"
+                className="text-[9px] font-semibold uppercase tracking-wider fill-slate-550"
               >
                 {type.substring(0, 5)}
               </text>
@@ -199,7 +199,7 @@ export default function Dashboard() {
       <div className="rounded-2xl p-6 md:p-8 bg-gradient-to-r from-violet-600/15 via-purple-600/5 to-cyan-500/10 border border-violet-500/15 flex flex-col md:flex-row justify-between items-start md:items-center gap-6">
         <div>
           <h2 className="text-2xl font-bold tracking-tight">Welcome back to ContentForge AI!</h2>
-          <p className="text-slate-500 dark:text-slate-400 text-sm mt-1">
+          <p className="text-slate-400 text-sm mt-1">
             Build and optimize custom text generations, edit workflows, or manage pre-seeded templates from your Prompt Library.
           </p>
         </div>
@@ -223,12 +223,12 @@ export default function Dashboard() {
           const Icon = item.icon;
           return (
             <div key={idx} className="glass p-5 rounded-2xl flex items-center gap-4">
-              <div className={`w-12 h-12 rounded-xl flex items-center justify-center ${item.color} border border-black/5 dark:border-white/5`}>
+              <div className={`w-12 h-12 rounded-xl flex items-center justify-center ${item.color} border border-white/5`}>
                 <Icon size={20} />
               </div>
               <div>
-                <span className="text-xs font-semibold text-slate-500 dark:text-slate-400 block">{item.name}</span>
-                <span className="text-2xl font-extrabold text-slate-900 dark:text-white mt-1 block leading-none">{item.value}</span>
+                <span className="text-xs font-semibold text-slate-400 block">{item.name}</span>
+                <span className="text-2xl font-extrabold text-white mt-1 block leading-none">{item.value}</span>
               </div>
             </div>
           );
@@ -241,7 +241,7 @@ export default function Dashboard() {
         {/* Left Columns - Recent Generations */}
         <div className="lg:col-span-2 space-y-4">
           <div className="flex items-center justify-between">
-            <h3 className="text-lg font-bold text-slate-900 dark:text-white">Recent Generations</h3>
+            <h3 className="text-lg font-bold text-white">Recent Generations</h3>
             <Link href="/history" className="text-xs font-semibold text-violet-500 hover:text-violet-400 flex items-center gap-1">
               <span>View All</span>
               <ChevronRight size={14} />
@@ -250,8 +250,8 @@ export default function Dashboard() {
 
           <div className="space-y-4">
             {recentGens.length === 0 ? (
-              <div className="glass p-8 rounded-2xl text-center space-y-4 border border-dashed border-slate-200 dark:border-slate-800">
-                <p className="text-slate-500 dark:text-slate-400 text-sm">No content generated yet. Open the workspace to get started.</p>
+              <div className="glass p-8 rounded-2xl text-center space-y-4 border border-dashed border-slate-800">
+                <p className="text-slate-400 text-sm">No content generated yet. Open the workspace to get started.</p>
                 <Link href="/create" className="inline-flex items-center gap-2 text-xs font-bold text-violet-500 hover:text-violet-400">
                   <span>Go to Workspace</span>
                   <ArrowRight size={12} />
@@ -265,7 +265,7 @@ export default function Dashboard() {
                   <Link 
                     key={gen.id} 
                     href={`/create?id=${gen.id}`}
-                    className="glass p-5 rounded-2xl block hover:bg-slate-100/50 dark:hover:bg-slate-900/30 transition-all border border-slate-200/50 dark:border-slate-800/30 hover:border-violet-500/20 group relative overflow-hidden"
+                    className="glass p-5 rounded-2xl block hover:bg-slate-900/30 transition-all border border-slate-800/30 hover:border-violet-500/20 group relative overflow-hidden"
                   >
                     <div className="flex items-start justify-between gap-4">
                       <div className="flex items-center gap-3">
@@ -273,8 +273,8 @@ export default function Dashboard() {
                           <Icon size={18} />
                         </div>
                         <div>
-                          <h4 className="font-bold text-slate-900 dark:text-white group-hover:text-violet-500 dark:group-hover:text-violet-400 transition-colors line-clamp-1">{gen.title}</h4>
-                          <span className="text-[10px] text-slate-400 dark:text-slate-500 mt-1 block">
+                          <h4 className="font-bold text-white group-hover:text-violet-400 transition-colors line-clamp-1">{gen.title}</h4>
+                          <span className="text-[10px] text-slate-500 mt-1 block">
                             {formatDate(gen.createdAt)} &bull; {gen.wordCount} words &bull; {gen.tone}
                           </span>
                         </div>
@@ -283,10 +283,10 @@ export default function Dashboard() {
                         <button
                           onClick={(e) => handleFavoriteToggle(gen.id, e)}
                           className={cn(
-                            "p-2 rounded-lg border hover:bg-slate-200 dark:hover:bg-slate-800 transition-colors",
+                            "p-2 rounded-lg border hover:bg-slate-800 transition-colors",
                             gen.isFavorite 
                               ? "text-pink-500 border-pink-500/25 bg-pink-500/5" 
-                              : "text-slate-400 border-slate-200 dark:border-slate-800"
+                              : "text-slate-400 border-slate-800"
                           )}
                           title={gen.isFavorite ? "Remove from Favorites" : "Add to Favorites"}
                         >
@@ -294,14 +294,14 @@ export default function Dashboard() {
                         </button>
                         <button
                           onClick={(e) => copyToClipboard(gen.generatedContent, e)}
-                          className="p-2 rounded-lg border border-slate-200 dark:border-slate-800 hover:bg-slate-200 dark:hover:bg-slate-800 text-slate-400 transition-colors"
+                          className="p-2 rounded-lg border border-slate-800 hover:bg-slate-800 text-slate-400 transition-colors"
                           title="Copy Draft"
                         >
                           <Copy size={14} />
                         </button>
                         <button
                           onClick={(e) => handleDelete(gen.id, e)}
-                          className="p-2 rounded-lg border border-slate-200 dark:border-slate-800 hover:bg-rose-500/10 hover:border-rose-500/20 hover:text-rose-500 text-slate-400 transition-colors"
+                          className="p-2 rounded-lg border border-slate-800 hover:bg-rose-500/10 hover:border-rose-500/20 hover:text-rose-500 text-slate-400 transition-colors"
                           title="Delete Draft"
                         >
                           <Trash2 size={14} />
@@ -320,13 +320,13 @@ export default function Dashboard() {
           
           {/* SVG bar chart */}
           <div className="glass p-5 rounded-2xl space-y-4">
-            <h3 className="text-sm font-bold text-slate-900 dark:text-white uppercase tracking-wider">Workspace Analytics</h3>
+            <h3 className="text-sm font-bold text-white uppercase tracking-wider">Workspace Analytics</h3>
             {renderTypeChart()}
           </div>
 
           {/* Quick Shortcuts */}
           <div className="space-y-3">
-            <h3 className="text-sm font-bold text-slate-500 dark:text-slate-400 uppercase tracking-wider">Quick Presets</h3>
+            <h3 className="text-sm font-bold text-slate-400 uppercase tracking-wider">Quick Presets</h3>
             <div className="grid grid-cols-2 gap-3">
               {[
                 { name: 'Blog Post', type: 'blog', color: 'border-blue-500/25 hover:bg-blue-500/5' },
@@ -338,7 +338,7 @@ export default function Dashboard() {
                   key={index}
                   href={`/create?type=${link.type}`}
                   className={cn(
-                    "p-4 rounded-xl border bg-white/50 dark:bg-slate-900/50 hover:-translate-y-0.5 transition-all text-xs font-semibold text-center leading-tight flex items-center justify-center gap-1.5",
+                    "p-4 rounded-xl border bg-slate-900/50 hover:-translate-y-0.5 transition-all text-xs font-semibold text-center leading-tight flex items-center justify-center gap-1.5",
                     link.color
                   )}
                 >
@@ -352,7 +352,7 @@ export default function Dashboard() {
           {/* Favorite Prompts List */}
           <div className="glass p-5 rounded-2xl space-y-4">
             <div className="flex items-center justify-between">
-              <h3 className="text-xs font-bold text-slate-900 dark:text-white uppercase tracking-wider">Favorite Prompts</h3>
+              <h3 className="text-xs font-bold text-white uppercase tracking-wider">Favorite Prompts</h3>
               <Link href="/prompts?filter=favorites" className="text-[10px] font-bold text-violet-500 hover:text-violet-400">View All</Link>
             </div>
             <div className="space-y-2">
@@ -363,10 +363,10 @@ export default function Dashboard() {
                   <Link
                     key={p.id}
                     href={`/create?templateId=${p.id}`}
-                    className="p-3 rounded-xl border border-slate-200/50 dark:border-slate-800/50 hover:bg-slate-100 dark:hover:bg-slate-800/40 flex items-center justify-between gap-3 text-xs group"
+                    className="p-3 rounded-xl border border-slate-800/50 hover:bg-slate-800/40 flex items-center justify-between gap-3 text-xs group"
                   >
                     <div>
-                      <h4 className="font-bold text-slate-800 dark:text-slate-200 line-clamp-1 group-hover:text-violet-500 dark:group-hover:text-violet-400 transition-colors">{p.name}</h4>
+                      <h4 className="font-bold text-slate-200 line-clamp-1 group-hover:text-violet-400 transition-colors">{p.name}</h4>
                       <span className="text-[9px] text-slate-400 block mt-0.5">{p.category}</span>
                     </div>
                     <ChevronRight size={14} className="text-slate-400" />

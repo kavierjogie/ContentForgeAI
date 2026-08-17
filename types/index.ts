@@ -26,7 +26,6 @@ export interface Prompt {
 }
 
 export interface AppSettings {
-  theme: 'light' | 'dark' | 'system';
   defaultTone: string;
   defaultLength: 'Short' | 'Medium' | 'Long';
   apiProvider: 'gemini' | 'demo';

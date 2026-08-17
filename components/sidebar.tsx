@@ -77,18 +77,18 @@ export default function Sidebar({ className }: SidebarProps) {
 
       {/* Sidebar Layout */}
       <aside className={cn(
-        "fixed inset-y-0 left-0 z-40 w-64 glass-panel border-r border-slate-200/80 dark:border-slate-800/80 flex flex-col justify-between transition-transform duration-300 ease-in-out lg:translate-x-0 lg:static lg:h-screen",
+        "fixed inset-y-0 left-0 z-40 w-64 glass-panel border-r border-slate-800/80 flex flex-col justify-between transition-transform duration-300 ease-in-out lg:translate-x-0 lg:static lg:h-screen",
         isOpen ? "translate-x-0" : "-translate-x-full",
         className
       )}>
         <div>
           {/* Header Branding */}
-          <div className="h-20 flex items-center px-6 border-b border-slate-200/50 dark:border-slate-800/50">
+          <div className="h-20 flex items-center px-6 border-b border-slate-800/50">
             <Link href="/" onClick={() => setIsOpen(false)} className="flex items-center gap-2">
               <div className="w-9 h-9 rounded-lg bg-gradient-to-tr from-violet-600 to-cyan-500 flex items-center justify-center text-white neon-glow-primary animate-pulse">
                 <Zap size={18} fill="currentColor" />
               </div>
-              <span className="font-bold text-xl tracking-tight bg-gradient-to-r from-slate-900 to-slate-700 dark:from-white dark:to-slate-300 bg-clip-text text-transparent">
+              <span className="font-bold text-xl tracking-tight bg-gradient-to-r from-white to-slate-300 bg-clip-text text-transparent">
                 ContentForge <span className="text-violet-500 font-extrabold text-xs align-super uppercase">AI</span>
               </span>
             </Link>
@@ -109,14 +109,14 @@ export default function Sidebar({ className }: SidebarProps) {
                     isActive 
                       ? item.accent
                         ? "bg-gradient-to-r from-violet-600 to-indigo-600 text-white shadow-lg neon-glow-primary"
-                        : "bg-slate-200/60 dark:bg-slate-800/60 text-violet-600 dark:text-violet-400"
-                      : "text-slate-600 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-800/40 hover:text-slate-900 dark:hover:text-white"
+                        : "bg-slate-800/60 text-violet-400"
+                      : "text-slate-400 hover:bg-slate-800/40 hover:text-white"
                   )}
                 >
                   <div className="flex items-center gap-3">
                     <Icon size={18} className={cn(
                       "transition-transform group-hover:scale-110",
-                      isActive ? "" : "text-slate-400 dark:text-slate-500 group-hover:text-slate-700 dark:group-hover:text-slate-300"
+                      isActive ? "" : "text-slate-50 group-hover:text-slate-300"
                     )} />
                     <span>{item.name}</span>
                   </div>
@@ -125,7 +125,7 @@ export default function Sidebar({ className }: SidebarProps) {
                       "text-xs px-2.5 py-0.5 rounded-full font-bold transition-all",
                       isActive 
                         ? "bg-white/20 text-white" 
-                        : "bg-slate-200/80 dark:bg-slate-800 text-slate-700 dark:text-slate-300 group-hover:bg-slate-300/80 dark:group-hover:bg-slate-700"
+                        : "bg-slate-800 text-slate-300 group-hover:bg-slate-700"
                     )}>
                       {item.badge}
                     </span>
@@ -137,13 +137,13 @@ export default function Sidebar({ className }: SidebarProps) {
         </div>
 
         {/* Footer Area */}
-        <div className="p-4 border-t border-slate-200/50 dark:border-slate-800/50 bg-slate-500/5 rounded-b-2xl">
+        <div className="p-4 border-t border-slate-800/50 bg-slate-500/5 rounded-b-2xl">
           <div className="flex items-center gap-3">
             <div className="w-10 h-10 rounded-full bg-gradient-to-tr from-violet-500 via-purple-500 to-indigo-500 flex items-center justify-center font-bold text-white shadow-md text-sm border border-white/20">
               CF
             </div>
             <div>
-              <p className="text-xs font-semibold text-slate-900 dark:text-white">Workspace User</p>
+              <p className="text-xs font-semibold text-white">Workspace User</p>
               <span className="text-[10px] text-emerald-500 flex items-center gap-1 font-medium">
                 <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-ping inline-block" />
                 Active Session

@@ -14,7 +14,7 @@ export default function LayoutWrapper({ children }: { children: React.ReactNode 
   }
 
   return (
-    <div className="flex h-screen overflow-hidden bg-slate-50 dark:bg-slate-950 text-slate-900 dark:text-slate-100 selection:bg-violet-500/20 dark:selection:bg-violet-500/30">
+    <div className="flex h-screen overflow-hidden bg-slate-950 text-slate-100 selection:bg-violet-500/30">
       {/* Workspace Navigation Sidebar */}
       <Sidebar />
 

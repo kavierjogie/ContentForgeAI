@@ -78,14 +78,14 @@ export default function FavoritesPage() {
     <div className="space-y-6">
       
       {/* Tabs selectors */}
-      <div className="flex border-b border-slate-200/60 dark:border-slate-800/60 pb-px">
+      <div className="flex border-b border-slate-800/60 pb-px">
         <button
           onClick={() => setActiveTab('prompts')}
           className={cn(
             "pb-3 text-sm font-bold border-b-2 px-4 transition-colors flex items-center gap-2",
             activeTab === 'prompts'
-              ? "border-violet-500 text-violet-600 dark:text-violet-400"
-              : "border-transparent text-slate-500 hover:text-slate-800 dark:hover:text-slate-350"
+              ? "border-violet-500 text-violet-400"
+              : "border-transparent text-slate-500 hover:text-slate-350"
           )}
         >
           <BookOpen size={16} />
@@ -96,8 +96,8 @@ export default function FavoritesPage() {
           className={cn(
             "pb-3 text-sm font-bold border-b-2 px-4 transition-colors flex items-center gap-2",
             activeTab === 'generations'
-              ? "border-violet-500 text-violet-600 dark:text-violet-400"
-              : "border-transparent text-slate-500 hover:text-slate-800 dark:hover:text-slate-350"
+              ? "border-violet-500 text-violet-400"
+              : "border-transparent text-slate-500 hover:text-slate-350"
           )}
         >
           <FileText size={16} />
@@ -109,12 +109,12 @@ export default function FavoritesPage() {
       {activeTab === 'prompts' && (
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {favPrompts.length === 0 ? (
-            <div className="col-span-full glass p-12 rounded-2xl text-center space-y-4 border border-dashed border-slate-200/50 dark:border-slate-800/50">
-              <div className="w-12 h-12 rounded-full bg-slate-100 dark:bg-slate-900/60 flex items-center justify-center mx-auto text-slate-400">
+            <div className="col-span-full glass p-12 rounded-2xl text-center space-y-4 border border-dashed border-slate-800/50">
+              <div className="w-12 h-12 rounded-full bg-slate-900/60 flex items-center justify-center mx-auto text-slate-400">
                 <FolderHeart size={20} />
               </div>
               <div>
-                <p className="text-sm font-bold text-slate-850 dark:text-slate-200">No favorite prompts saved yet</p>
+                <p className="text-sm font-bold text-slate-200">No favorite prompts saved yet</p>
                 <p className="text-slate-400 text-xs mt-1">Explore our starter templates to save useful prompts to your personal dashboard.</p>
               </div>
               <Link 
@@ -144,12 +144,12 @@ export default function FavoritesPage() {
       {activeTab === 'generations' && (
         <div className="space-y-4">
           {favGenerations.length === 0 ? (
-            <div className="glass p-12 rounded-2xl text-center space-y-4 border border-dashed border-slate-200/50 dark:border-slate-800/50">
-              <div className="w-12 h-12 rounded-full bg-slate-100 dark:bg-slate-900/60 flex items-center justify-center mx-auto text-slate-400">
+            <div className="glass p-12 rounded-2xl text-center space-y-4 border border-dashed border-slate-800/50">
+              <div className="w-12 h-12 rounded-full bg-slate-900/60 flex items-center justify-center mx-auto text-slate-400">
                 <Heart size={20} />
               </div>
               <div>
-                <p className="text-sm font-bold text-slate-850 dark:text-slate-200">No favorite generations saved yet</p>
+                <p className="text-sm font-bold text-slate-200">No favorite generations saved yet</p>
                 <p className="text-slate-400 text-xs mt-1">Generate content in the workspace and star your high-quality drafts.</p>
               </div>
               <Link 
@@ -164,25 +164,25 @@ export default function FavoritesPage() {
               <Link
                 key={item.id}
                 href={`/create?id=${item.id}`}
-                className="glass p-6 rounded-2xl block hover:bg-slate-100/50 dark:hover:bg-slate-900/30 border border-slate-200/50 dark:border-slate-800/50 hover:border-violet-500/25 transition-all group relative overflow-hidden"
+                className="glass p-6 rounded-2xl block hover:bg-slate-900/30 border border-slate-800/50 hover:border-violet-500/25 transition-all group relative overflow-hidden"
               >
                 <div className="flex flex-col md:flex-row md:items-center justify-between gap-4">
                   <div className="space-y-2 max-w-xl">
                     <div className="flex items-center gap-2.5">
-                      <span className="text-[9px] uppercase font-bold tracking-wider px-2 py-0.5 rounded bg-violet-600/10 border border-violet-500/20 text-violet-600 dark:text-violet-400">
+                      <span className="text-[9px] uppercase font-bold tracking-wider px-2 py-0.5 rounded bg-violet-600/10 border border-violet-500/20 text-violet-400">
                         {item.contentType}
                       </span>
                       <span className="text-[10px] text-slate-400 font-mono">
                         {formatDate(item.createdAt)}
                       </span>
                     </div>
-                    <h3 className="text-lg font-bold text-slate-900 dark:text-white line-clamp-1 group-hover:text-violet-500 dark:group-hover:text-violet-400 transition-colors">
+                    <h3 className="text-lg font-bold text-white line-clamp-1 group-hover:text-violet-400 transition-colors">
                       {item.title}
                     </h3>
                     <p className="text-slate-400 text-xs line-clamp-2 leading-relaxed">
                       {item.generatedContent}
                     </p>
-                    <div className="flex flex-wrap items-center gap-3 pt-1 text-[10px] text-slate-400 dark:text-slate-500 font-mono">
+                    <div className="flex flex-wrap items-center gap-3 pt-1 text-[10px] text-slate-500 font-mono">
                       <span>Tone: <strong>{item.tone}</strong></span>
                       <span>&bull;</span>
                       <span>Words: <strong>{item.wordCount}</strong></span>
@@ -199,19 +199,19 @@ export default function FavoritesPage() {
                     </button>
                     <button
                       onClick={(e) => copyToClipboard(item.generatedContent, e)}
-                      className="p-2.5 rounded-xl border border-slate-200 dark:border-slate-800 hover:bg-slate-100 dark:hover:bg-slate-800 text-slate-400 transition-colors"
+                      className="p-2.5 rounded-xl border border-slate-880 hover:bg-slate-800 text-slate-400 transition-colors"
                       title="Copy Content"
                     >
                       <Copy size={14} />
                     </button>
                     <button
                       onClick={(e) => handleDeleteGen(item.id, e)}
-                      className="p-2.5 rounded-xl border border-slate-200 dark:border-slate-800 hover:text-rose-500 hover:bg-rose-500/10 hover:border-rose-500/20 text-slate-400 transition-colors"
+                      className="p-2.5 rounded-xl border border-slate-800 hover:text-rose-500 hover:bg-rose-500/10 hover:border-rose-500/20 text-slate-400 transition-colors"
                       title="Delete Record"
                     >
                       <Trash2 size={14} />
                     </button>
-                    <div className="p-2.5 rounded-xl border border-slate-200 dark:border-slate-800 group-hover:border-violet-500/30 group-hover:bg-violet-500/5 text-slate-400 group-hover:text-violet-500 transition-all">
+                    <div className="p-2.5 rounded-xl border border-slate-800 group-hover:border-violet-500/30 group-hover:bg-violet-500/5 text-slate-400 group-hover:text-violet-500 transition-all">
                       <ChevronRight size={14} />
                     </div>
                   </div>

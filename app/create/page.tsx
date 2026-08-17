@@ -266,7 +266,7 @@ function CreateContentInner() {
       
       {/* Back button */}
       <div>
-        <Link href="/dashboard" className="inline-flex items-center gap-1.5 text-xs font-bold text-slate-500 hover:text-slate-800 dark:hover:text-slate-350 transition-colors">
+        <Link href="/dashboard" className="inline-flex items-center gap-1.5 text-xs font-bold text-slate-500 hover:text-slate-350 transition-colors">
           <ArrowLeft size={14} />
           <span>Back to Dashboard</span>
         </Link>
@@ -276,13 +276,13 @@ function CreateContentInner() {
       <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 md:gap-8 items-start">
         
         {/* Left Form config (5 cols) */}
-        <div className="lg:col-span-5 glass p-6 rounded-2xl border border-slate-200/50 dark:border-slate-800/50">
+        <div className="lg:col-span-5 glass p-6 rounded-2xl border border-slate-800/50">
           <div className="flex items-center gap-2 mb-6">
-            <div className="w-8 h-8 rounded-lg bg-violet-600/15 border border-violet-500/25 flex items-center justify-center text-violet-600 dark:text-violet-400">
+            <div className="w-8 h-8 rounded-lg bg-violet-600/15 border border-violet-500/25 flex items-center justify-center text-violet-400">
               <Layers size={16} />
             </div>
             <div>
-              <h3 className="font-bold text-sm text-slate-900 dark:text-white">Workspace Configuration</h3>
+              <h3 className="font-bold text-sm text-white">Workspace Configuration</h3>
               <p className="text-[10px] text-slate-500">Fine-tune the parameters sent to the AI builder.</p>
             </div>
           </div>

@@ -9,7 +9,6 @@ const KEYS = {
 };
 
 const DEFAULT_SETTINGS: AppSettings = {
-  theme: 'dark',
   defaultTone: 'Professional',
   defaultLength: 'Medium',
   apiProvider: 'demo',

@@ -85,7 +85,7 @@ export default function PromptCard({
   const hasVariables = prompt.variables && prompt.variables.length > 0;
 
   return (
-    <div className="glass p-5 rounded-2xl border border-slate-200/50 dark:border-slate-800/50 hover:border-violet-500/20 flex flex-col justify-between hover:shadow-md hover:bg-slate-100/30 dark:hover:bg-slate-900/15 transition-all group relative overflow-hidden">
+    <div className="glass p-5 rounded-2xl border border-slate-800/50 hover:border-violet-500/20 flex flex-col justify-between hover:shadow-md hover:bg-slate-900/15 transition-all group relative overflow-hidden">
       <div>
         
         {/* Header (category badge + action group) */}
@@ -102,7 +102,7 @@ export default function PromptCard({
             <button
               onClick={() => onFavoriteToggle(prompt.id)}
               className={cn(
-                "p-1.5 rounded-lg border border-slate-200/50 dark:border-slate-850/50 hover:bg-slate-200 dark:hover:bg-slate-800 transition-colors",
+                "p-1.5 rounded-lg border border-slate-850/50 hover:bg-slate-800 transition-colors",
                 prompt.isFavorite ? "text-pink-500 bg-pink-500/5 border-pink-500/25" : "text-slate-400"
               )}
               title={prompt.isFavorite ? "Unfavorite Prompt" : "Favorite Prompt"}
@@ -113,7 +113,7 @@ export default function PromptCard({
             {/* Duplicate button */}
             <button
               onClick={() => onDuplicateClick(prompt)}
-              className="p-1.5 rounded-lg border border-slate-200/50 dark:border-slate-850/50 text-slate-400 hover:bg-slate-200 dark:hover:bg-slate-800 transition-colors"
+              className="p-1.5 rounded-lg border border-slate-850/50 text-slate-400 hover:bg-slate-800 transition-colors"
               title="Duplicate Prompt"
             >
               <Copy size={12} />
@@ -123,7 +123,7 @@ export default function PromptCard({
             {prompt.isCustom && (
               <button
                 onClick={() => onEditClick(prompt)}
-                className="p-1.5 rounded-lg border border-slate-200/50 dark:border-slate-850/50 text-slate-400 hover:bg-slate-200 dark:hover:bg-slate-800 transition-colors"
+                className="p-1.5 rounded-lg border border-slate-850/50 text-slate-400 hover:bg-slate-800 transition-colors"
                 title="Edit Prompt"
               >
                 <Edit size={12} />
@@ -134,7 +134,7 @@ export default function PromptCard({
             {prompt.isCustom && (
               <button
                 onClick={() => onDeleteClick(prompt.id)}
-                className="p-1.5 rounded-lg border border-slate-200/50 dark:border-slate-850/50 text-slate-400 hover:text-rose-500 hover:bg-rose-500/10 hover:border-rose-500/20 transition-colors"
+                className="p-1.5 rounded-lg border border-slate-850/50 text-slate-400 hover:text-rose-500 hover:bg-rose-500/10 hover:border-rose-500/20 transition-colors"
                 title="Delete Prompt"
               >
                 <Trash2 size={12} />
@@ -152,7 +152,7 @@ export default function PromptCard({
             <Icon size={16} />
           </div>
           <div>
-            <h4 className="font-bold text-slate-900 dark:text-white group-hover:text-violet-500 dark:group-hover:text-violet-400 transition-colors line-clamp-1 leading-snug">
+            <h4 className="font-bold text-white group-hover:text-violet-400 transition-colors line-clamp-1 leading-snug">
               {prompt.name}
             </h4>
             <p className="text-slate-400 text-xs mt-1.5 leading-relaxed line-clamp-2">
@@ -166,7 +166,7 @@ export default function PromptCard({
           <div className="mt-4 flex flex-wrap gap-1 items-center">
             <span className="text-[9px] font-bold text-slate-500 mr-1 uppercase">Inputs:</span>
             {prompt.variables.map(v => (
-              <span key={v} className="text-[9px] font-mono font-semibold px-1.5 py-0.5 rounded bg-slate-200 dark:bg-slate-800 text-slate-600 dark:text-slate-400">
+              <span key={v} className="text-[9px] font-mono font-semibold px-1.5 py-0.5 rounded bg-slate-800 text-slate-400">
                 {v}
               </span>
             ))}
@@ -175,8 +175,8 @@ export default function PromptCard({
       </div>
 
       {/* Action Footer */}
-      <div className="mt-6 border-t border-slate-200/40 dark:border-slate-800/40 pt-4 flex items-center justify-between">
-        <span className="text-[10px] text-slate-400 dark:text-slate-500 font-mono">
+      <div className="mt-6 border-t border-slate-800/40 pt-4 flex items-center justify-between">
+        <span className="text-[10px] text-slate-500 font-mono">
           {prompt.isCustom ? 'User Prompt' : 'Starter Template'}
         </span>
         <button

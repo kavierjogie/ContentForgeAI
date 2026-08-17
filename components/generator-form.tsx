@@ -92,7 +92,7 @@ Ensure the result has clear, semantic structure.`;
       
       {/* Content Type Cards */}
       <div className="space-y-2">
-        <label className="text-xs font-bold uppercase tracking-wider text-slate-500 dark:text-slate-400">Content Type</label>
+        <label className="text-xs font-bold uppercase tracking-wider text-slate-400">Content Type</label>
         <div className="grid grid-cols-2 sm:grid-cols-4 gap-2">
           {contentTypes.map((t) => (
             <button
@@ -102,8 +102,8 @@ Ensure the result has clear, semantic structure.`;
               className={cn(
                 "p-3 rounded-xl border text-xs font-semibold transition-all text-center",
                 contentType === t.value
-                  ? "bg-violet-600/10 border-violet-500 text-violet-600 dark:text-violet-400 font-bold"
-                  : "bg-white/50 dark:bg-slate-900/50 border-slate-200 dark:border-slate-800 text-slate-700 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-800/40"
+                  ? "bg-violet-600/10 border-violet-500 text-violet-400 font-bold"
+                  : "bg-slate-900/50 border-slate-800 text-slate-400 hover:bg-slate-800/40"
               )}
             >
               {t.label}
@@ -114,7 +114,7 @@ Ensure the result has clear, semantic structure.`;
 
       {/* Topic/Subject input */}
       <div className="space-y-2">
-        <label htmlFor="topic-input" className="text-xs font-bold uppercase tracking-wider text-slate-500 dark:text-slate-400">Topic / Subject *</label>
+        <label htmlFor="topic-input" className="text-xs font-bold uppercase tracking-wider text-slate-400">Topic / Subject *</label>
         <input
           id="topic-input"
           type="text"
@@ -123,13 +123,13 @@ Ensure the result has clear, semantic structure.`;
           placeholder="e.g. How AI is changing software engineering"
           required
           disabled={isLoading}
-          className="w-full px-4 py-3 rounded-xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 focus:outline-none focus:ring-2 focus:ring-violet-500 text-sm placeholder:text-slate-400 dark:placeholder:text-slate-600 transition-shadow disabled:opacity-50"
+          className="w-full px-4 py-3 rounded-xl border border-slate-800 bg-slate-900 focus:outline-none focus:ring-2 focus:ring-violet-500 text-sm placeholder:text-slate-600 transition-shadow disabled:opacity-50 text-slate-100"
         />
       </div>
 
       {/* Audience */}
       <div className="space-y-2">
-        <label htmlFor="audience-input" className="text-xs font-bold uppercase tracking-wider text-slate-500 dark:text-slate-400">Target Audience</label>
+        <label htmlFor="audience-input" className="text-xs font-bold uppercase tracking-wider text-slate-400">Target Audience</label>
         <input
           id="audience-input"
           type="text"
@@ -137,7 +137,7 @@ Ensure the result has clear, semantic structure.`;
           onChange={(e) => setAudience(e.target.value)}
           placeholder="e.g. University computer science students"
           disabled={isLoading}
-          className="w-full px-4 py-3 rounded-xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 focus:outline-none focus:ring-2 focus:ring-violet-500 text-sm placeholder:text-slate-400 dark:placeholder:text-slate-600 transition-shadow disabled:opacity-50"
+          className="w-full px-4 py-3 rounded-xl border border-slate-800 bg-slate-900 focus:outline-none focus:ring-2 focus:ring-violet-500 text-sm placeholder:text-slate-600 transition-shadow disabled:opacity-50 text-slate-100"
         />
       </div>
 
@@ -146,13 +146,13 @@ Ensure the result has clear, semantic structure.`;
         
         {/* Tone Select */}
         <div className="space-y-2">
-          <label htmlFor="tone-select" className="text-xs font-bold uppercase tracking-wider text-slate-500 dark:text-slate-400">Tone</label>
+          <label htmlFor="tone-select" className="text-xs font-bold uppercase tracking-wider text-slate-400">Tone</label>
           <select
             id="tone-select"
             value={tone}
             onChange={(e) => setTone(e.target.value)}
             disabled={isLoading}
-            className="w-full px-4 py-3 rounded-xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 focus:outline-none focus:ring-2 focus:ring-violet-500 text-sm transition-shadow disabled:opacity-50"
+            className="w-full px-4 py-3 rounded-xl border border-slate-800 bg-slate-900 focus:outline-none focus:ring-2 focus:ring-violet-500 text-sm transition-shadow disabled:opacity-50 text-slate-100"
           >
             {tones.map((t) => <option key={t} value={t}>{t}</option>)}
           </select>
@@ -160,8 +160,8 @@ Ensure the result has clear, semantic structure.`;
 
         {/* Length Toggle */}
         <div className="space-y-2">
-          <label className="text-xs font-bold uppercase tracking-wider text-slate-500 dark:text-slate-400">Length</label>
-          <div className="flex rounded-xl border border-slate-200 dark:border-slate-800 overflow-hidden bg-white dark:bg-slate-900 h-[46px] p-1">
+          <label className="text-xs font-bold uppercase tracking-wider text-slate-400">Length</label>
+          <div className="flex rounded-xl border border-slate-800 overflow-hidden bg-slate-900 h-[46px] p-1">
             {lengths.map((l) => (
               <button
                 type="button"
@@ -172,7 +172,7 @@ Ensure the result has clear, semantic structure.`;
                   "flex-1 text-xs font-semibold rounded-lg transition-all",
                   length === l
                     ? "bg-violet-600 text-white shadow-sm"
-                    : "text-slate-500 hover:bg-slate-100 dark:hover:bg-slate-800/40 hover:text-slate-850"
+                    : "text-slate-500 hover:bg-slate-800/40 hover:text-slate-350"
                 )}
               >
                 {l}
@@ -183,11 +183,9 @@ Ensure the result has clear, semantic structure.`;
 
       </div>
 
-
-
-      {/* Additional Instructions */}
+      {/* Custom Instructions */}
       <div className="space-y-2">
-        <label htmlFor="instructions-input" className="text-xs font-bold uppercase tracking-wider text-slate-500 dark:text-slate-400">Custom Instructions</label>
+        <label htmlFor="instructions-input" className="text-xs font-bold uppercase tracking-wider text-slate-400">Custom Instructions</label>
         <textarea
           id="instructions-input"
           value={instructions}
@@ -195,16 +193,16 @@ Ensure the result has clear, semantic structure.`;
           placeholder="e.g. Include three practical examples and use simple language."
           rows={3}
           disabled={isLoading}
-          className="w-full px-4 py-3 rounded-xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 focus:outline-none focus:ring-2 focus:ring-violet-500 text-sm placeholder:text-slate-400 dark:placeholder:text-slate-600 transition-shadow disabled:opacity-50 resize-y"
+          className="w-full px-4 py-3 rounded-xl border border-slate-800 bg-slate-900 focus:outline-none focus:ring-2 focus:ring-violet-500 text-sm placeholder:text-slate-600 transition-shadow disabled:opacity-50 resize-y text-slate-100"
         />
       </div>
 
       {/* Collapsible Advanced Prompt Section */}
-      <div className="border border-slate-200/50 dark:border-slate-800/50 rounded-xl overflow-hidden">
+      <div className="border border-slate-800/50 rounded-xl overflow-hidden">
         <button
           type="button"
           onClick={() => setShowAdvanced(!showAdvanced)}
-          className="w-full px-4 py-3 flex items-center justify-between bg-slate-50 dark:bg-slate-900/50 text-xs font-bold uppercase tracking-wider text-slate-500 hover:text-slate-800 dark:hover:text-slate-350 transition-colors"
+          className="w-full px-4 py-3 flex items-center justify-between bg-slate-900/50 text-xs font-bold uppercase tracking-wider text-slate-500 hover:text-slate-350 transition-colors"
         >
           <span className="flex items-center gap-1.5">
             <Eye size={14} />
@@ -213,13 +211,13 @@ Ensure the result has clear, semantic structure.`;
           {showAdvanced ? <ChevronUp size={14} /> : <ChevronDown size={14} />}
         </button>
         {showAdvanced && (
-          <div className="p-4 bg-slate-100 dark:bg-slate-950 border-t border-slate-200/50 dark:border-slate-800/50 space-y-2">
+          <div className="p-4 bg-slate-950 border-t border-slate-800/50 space-y-2">
             <textarea
               value={prompt}
               onChange={(e) => setPrompt(e.target.value)}
               disabled={isLoading}
               rows={5}
-              className="w-full p-3 font-mono text-[11px] rounded-lg border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 focus:outline-none focus:ring-2 focus:ring-violet-500 resize-none text-slate-600 dark:text-slate-400"
+              className="w-full p-3 font-mono text-[11px] rounded-lg border border-slate-800 bg-slate-900 focus:outline-none focus:ring-2 focus:ring-violet-500 resize-none text-slate-400"
             />
             <p className="text-[10px] text-slate-400">
               This compiled prompt is sent to the backend endpoint. You can modify it manually for advanced control.
